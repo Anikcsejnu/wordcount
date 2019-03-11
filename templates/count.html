@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<title>Home Page</title>
+	</head>
+	<body>
+
+
+		<a href="{% url 'home' %}">Start again</a>
+		
+		<font size="14" color="green">There are {{ wordcount }} words</font>
+
+		<h2>Your text</h2>
+		{{ fulltext }}
+		<table border = "2" width="600px">
+
+			<tr><th>Word</th><th>Count</th></tr>
+			{% for word, count in sortedWord %}
+
+			<tr><td align="center">{{word}}</td> <td>{{count}}</td></tr>
+
+			{% endfor %}
+		</table>
+
+	</body>
+</html>
